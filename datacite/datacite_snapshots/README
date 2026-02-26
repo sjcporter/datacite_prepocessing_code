@@ -1,0 +1,36 @@
+DataCite Public Data File 2024
+==============================
+
+1. Introduction
+    The DataCite Public Data File contains metadata records in JSON format for all DataCite DOIs in Findable state that were registered up to the end of 2024.
+    Records have descriptive metadata for research outputs and resources structured according to the DataCite Metadata Schema and DataCite REST API.
+    Records include links to other persistent identifiers (PIDs) for works (DOIs), people (ORCID iDs), and organizations (ROR IDs).
+    Use of the DataCite Public Data File is subject to the DataCite Data File Use Policy (available at https://support.datacite.org/docs/datacite-data-file-use-policy).
+
+2. Format
+    The Data File is supplied as a TAR archive, containing JSONLines formatted metadata records and CSVs with some supplemental information for easier filtering.
+    The folders within the Data File are used to group each record by the month it was last updated, following the convention `updated_YYYY-MM`.
+    Inside each folder, individual files are compressed with GZIP, to allow for targeted and/or parallel extraction (see section 4 below).
+    Each `part_XXXX.jsonl` file contains up to 10,000 metadata records, one per line, with each line being a valid self-contained JSON document.
+    For more information on the data format, please see the DataCite Support page linked in section 6 below.
+   
+3. Size
+    The 2024 Data File contains 72,019,577 metadata records, split across 8034 JSONL files as well as 167 CSV files (one per month), and in total is 347GiB when fully decompressed.
+
+4. Extracting the Data File
+    The Data File can be easily decompressed in its entirety by using a tool such as GNU Parallel to handle the extraction of each individual GZIP file. 
+    The following steps assume that you are working from a Bash-compatible shell on a Linux computer with the `gzip` and `parallel` packages installed, but may also work in other configurations.
+    First, extract all of the files from the TAR archive: `tar -xf DataCite_Public_Data_File_2024.tar`.
+    Then use `find` to list the files, and pipe them into parallel: `find . -name "*.gz" | parallel gunzip`.
+    This will extract the contents of the Data File in situ, replacing the gzipped files with their decompressed versions.
+
+5. Querying the Data File using `jq`
+    One efficient way to query data from the Data File is to use a command line JSON tool such as `jq` (https://jqlang.github.io/jq/).
+    A simple approach is to read the JSONL files and pipe them into `jq` directly, allowing usage of filters and then selection of relevant attributes.
+    The following query will page through the entire Data File and extract records for objects published in 2024, and then select the DOI, URL, and the first listed Title:
+    `cat dois/**/*.jsonl | jq '.attributes | select(.publicationYear == 2024) | {doi, url, title: .titles[0].title}'`
+    The output from this command could then be redirected to a separate file (e.g, by appending ` > my_records.json` to the end of the previous command).
+    Further optimization of this pattern could be achieved by using parallel processing of the JSONL files, rather than reading them sequentially using `cat`.
+
+6. Further Support
+    For more information about the Data File, please see the DataCite Support page here: https://support.datacite.org/docs/datacite-public-data-file or email support@datacite.org.

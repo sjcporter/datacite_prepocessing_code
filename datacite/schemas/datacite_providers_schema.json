@@ -1,0 +1,164 @@
+[
+  {
+    "name": "id",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "type",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "attributes",
+    "fields": [
+      {
+        "name": "name",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "displayName",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "symbol",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "website",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "description",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "region",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "country",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "logoUrl",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "memberType",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "organizationType",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "focusArea",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "nonProfitStatus",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "isActive",
+        "type": "BOOLEAN",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "joined",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "rorId",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "created",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "updated",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "doiEstimate",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+      }
+    ],
+    "type": "RECORD",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "relationships",
+    "fields": [
+      {
+        "name": "clients",
+        "fields": [
+          {
+            "name": "data",
+            "fields": [
+              {
+                "name": "id",
+                "type": "STRING",
+                "mode": "NULLABLE"
+              },
+              {
+                "name": "type",
+                "type": "STRING",
+                "mode": "NULLABLE"
+              }
+            ],
+            "type": "RECORD",
+            "mode": "REPEATED"
+          }
+        ],
+        "type": "RECORD",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "prefixes",
+        "fields": [
+          {
+            "name": "data",
+            "fields": [
+              {
+                "name": "id",
+                "type": "STRING",
+                "mode": "NULLABLE"
+              },
+              {
+                "name": "type",
+                "type": "STRING",
+                "mode": "NULLABLE"
+              }
+            ],
+            "type": "RECORD",
+            "mode": "REPEATED"
+          }
+        ],
+        "type": "RECORD",
+        "mode": "NULLABLE"
+      }
+    ],
+    "type": "RECORD",
+    "mode": "NULLABLE"
+  }
+]

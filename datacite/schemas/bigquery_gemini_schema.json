@@ -1,0 +1,1454 @@
+[
+  {
+    "name": "attributes",
+    "mode": "NULLABLE",
+    "type": "RECORD",
+    "description": "The container for all metadata attributes associated with the DOI.",
+    "fields": [
+      {
+        "name": "alternateIdentifiers",
+        "mode": "REPEATED",
+        "type": "RECORD",
+        "description": "An identifier or identifiers other than the primary Identifier (DOI) applied to the resource being registered (e.g., ISSN, ISBN).",
+        "fields": [
+          {
+            "name": "alternateIdentifier",
+            "mode": "NULLABLE",
+            "type": "STRING",
+            "description": "The value of the AlternateIdentifier."
+          },
+          {
+            "name": "alternateIdentifierType",
+            "mode": "NULLABLE",
+            "type": "STRING",
+            "description": "The type of the AlternateIdentifier (e.g., ISBN, ISSN, ARK)."
+          }
+        ]
+      },
+      {
+        "name": "citationCount",
+        "mode": "NULLABLE",
+        "type": "INTEGER",
+        "description": "The number of citations for this resource as tracked by DataCite Event Data."
+      },
+      {
+        "name": "citationsOverTime",
+        "mode": "REPEATED",
+        "type": "RECORD",
+        "description": "A breakdown of citation counts grouped by year.",
+        "fields": [
+          {
+            "name": "total",
+            "mode": "NULLABLE",
+            "type": "INTEGER",
+            "description": "The total number of citations for the specific year."
+          },
+          {
+            "name": "year",
+            "mode": "NULLABLE",
+            "type": "STRING",
+            "description": "The year of the citation count."
+          }
+        ]
+      },
+      {
+        "name": "container",
+        "mode": "NULLABLE",
+        "type": "RECORD",
+        "description": "Descriptive information about the container (e.g., journal, book) if the resource is part of a larger work.",
+        "fields": [
+          {
+            "name": "firstPage",
+            "mode": "NULLABLE",
+            "type": "STRING",
+            "description": "The first page of the resource within the container."
+          },
+          {
+            "name": "identifier",
+            "mode": "NULLABLE",
+            "type": "STRING",
+            "description": "The unique identifier for the container (e.g., the ISSN of the journal)."
+          },
+          {
+            "name": "identifierType",
+            "mode": "NULLABLE",
+            "type": "STRING",
+            "description": "The type of identifier used for the container (e.g., ISSN, ISBN)."
+          },
+          {
+            "name": "issue",
+            "mode": "NULLABLE",
+            "type": "STRING",
+            "description": "The issue number of the container."
+          },
+          {
+            "name": "lastPage",
+            "mode": "NULLABLE",
+            "type": "STRING",
+            "description": "The last page of the resource within the container."
+          },
+          {
+            "name": "title",
+            "mode": "NULLABLE",
+            "type": "STRING",
+            "description": "The title of the container (e.g., Journal Name)."
+          },
+          {
+            "name": "type",
+            "mode": "NULLABLE",
+            "type": "STRING",
+            "description": "The type of the container (e.g., Journal, Series)."
+          },
+          {
+            "name": "volume",
+            "mode": "NULLABLE",
+            "type": "STRING",
+            "description": "The volume number of the container."
+          }
+        ]
+      },
+      {
+        "name": "contentUrl",
+        "mode": "REPEATED",
+        "type": "STRING",
+        "description": "The direct URL to the content file (if different from the landing page URL)."
+      },
+      {
+        "name": "contributors",
+        "mode": "REPEATED",
+        "type": "RECORD",
+        "description": "The institution or person responsible for collecting, managing, distributing, or otherwise contributing to the development of the resource.",
+        "fields": [
+          {
+            "name": "affiliation",
+            "mode": "REPEATED",
+            "type": "RECORD",
+            "description": "The organizational or institutional affiliation of the contributor.",
+            "fields": [
+              {
+                "name": "affiliationIdentifier",
+                "mode": "NULLABLE",
+                "type": "STRING",
+                "description": "The unique identifier of the affiliation (e.g., ROR ID)."
+              },
+              {
+                "name": "affiliationIdentifierScheme",
+                "mode": "NULLABLE",
+                "type": "STRING",
+                "description": "The name of the scheme used for the affiliation identifier (e.g., ROR)."
+              },
+              {
+                "name": "name",
+                "mode": "NULLABLE",
+                "type": "STRING",
+                "description": "The name of the affiliation."
+              },
+              {
+                "name": "schemeUri",
+                "mode": "NULLABLE",
+                "type": "STRING",
+                "description": "The URI of the affiliation identifier scheme."
+              }
+            ]
+          },
+          {
+            "name": "contributorType",
+            "mode": "NULLABLE",
+            "type": "STRING",
+            "description": "The type of contributor (e.g., ContactPerson, DataCollector)."
+          },
+          {
+            "name": "familyName",
+            "mode": "NULLABLE",
+            "type": "STRING",
+            "description": "The surname or family name of the contributor."
+          },
+          {
+            "name": "givenName",
+            "mode": "NULLABLE",
+            "type": "STRING",
+            "description": "The personal or first name of the contributor."
+          },
+          {
+            "name": "lang",
+            "mode": "NULLABLE",
+            "type": "STRING",
+            "description": "The language of the contributor's name."
+          },
+          {
+            "name": "name",
+            "mode": "NULLABLE",
+            "type": "STRING",
+            "description": "The full name of the contributor."
+          },
+          {
+            "name": "nameIdentifiers",
+            "mode": "REPEATED",
+            "type": "RECORD",
+            "description": "Uniquely identifies an individual or legal entity, according to various schemes (e.g., ORCID).",
+            "fields": [
+              {
+                "name": "nameIdentifier",
+                "mode": "NULLABLE",
+                "type": "STRING",
+                "description": "The value of the name identifier."
+              },
+              {
+                "name": "nameIdentifierScheme",
+                "mode": "NULLABLE",
+                "type": "STRING",
+                "description": "The name of the name identifier scheme."
+              },
+              {
+                "name": "schemeUri",
+                "mode": "NULLABLE",
+                "type": "STRING",
+                "description": "The URI of the name identifier scheme."
+              }
+            ]
+          },
+          {
+            "name": "nameType",
+            "mode": "NULLABLE",
+            "type": "STRING",
+            "description": "The type of name (Personal or Organizational)."
+          }
+        ]
+      },
+      {
+        "name": "created",
+        "mode": "NULLABLE",
+        "type": "TIMESTAMP",
+        "description": "The date and time the DOI was first created in the DataCite system."
+      },
+      {
+        "name": "creators",
+        "mode": "REPEATED",
+        "type": "RECORD",
+        "description": "The main researchers involved in producing the data, or the authors of the publication, in priority order.",
+        "fields": [
+          {
+            "name": "affiliation",
+            "mode": "REPEATED",
+            "type": "RECORD",
+            "description": "The organizational or institutional affiliation of the creator.",
+            "fields": [
+              {
+                "name": "affiliationIdentifier",
+                "mode": "NULLABLE",
+                "type": "STRING",
+                "description": "The unique identifier of the affiliation (e.g., ROR ID)."
+              },
+              {
+                "name": "affiliationIdentifierScheme",
+                "mode": "NULLABLE",
+                "type": "STRING",
+                "description": "The name of the scheme used for the affiliation identifier."
+              },
+              {
+                "name": "name",
+                "mode": "NULLABLE",
+                "type": "STRING",
+                "description": "The name of the affiliation."
+              },
+              {
+                "name": "schemeUri",
+                "mode": "NULLABLE",
+                "type": "STRING",
+                "description": "The URI of the affiliation identifier scheme."
+              }
+            ]
+          },
+          {
+            "name": "familyName",
+            "mode": "NULLABLE",
+            "type": "STRING",
+            "description": "The surname or family name of the creator."
+          },
+          {
+            "name": "givenName",
+            "mode": "NULLABLE",
+            "type": "STRING",
+            "description": "The personal or first name of the creator."
+          },
+          {
+            "name": "lang",
+            "mode": "NULLABLE",
+            "type": "STRING",
+            "description": "The language of the creator's name."
+          },
+          {
+            "name": "name",
+            "mode": "NULLABLE",
+            "type": "STRING",
+            "description": "The full name of the creator."
+          },
+          {
+            "name": "nameIdentifiers",
+            "mode": "REPEATED",
+            "type": "RECORD",
+            "description": "Uniquely identifies the creator (e.g., ORCID).",
+            "fields": [
+              {
+                "name": "nameIdentifier",
+                "mode": "NULLABLE",
+                "type": "STRING",
+                "description": "The value of the name identifier."
+              },
+              {
+                "name": "nameIdentifierScheme",
+                "mode": "NULLABLE",
+                "type": "STRING",
+                "description": "The name of the name identifier scheme."
+              },
+              {
+                "name": "schemeUri",
+                "mode": "NULLABLE",
+                "type": "STRING",
+                "description": "The URI of the name identifier scheme."
+              }
+            ]
+          },
+          {
+            "name": "nameType",
+            "mode": "NULLABLE",
+            "type": "STRING",
+            "description": "The type of name (Personal or Organizational)."
+          }
+        ]
+      },
+      {
+        "name": "dates",
+        "mode": "REPEATED",
+        "type": "RECORD",
+        "description": "Different dates relevant to the work (e.g., Accepted, Available, Copyrighted).",
+        "fields": [
+          {
+            "name": "date",
+            "mode": "NULLABLE",
+            "type": "STRING",
+            "description": "The date value (YYYY, YYYY-MM, or YYYY-MM-DD)."
+          },
+          {
+            "name": "dateInformation",
+            "mode": "NULLABLE",
+            "type": "STRING",
+            "description": "Specific information about the date (e.g., \"published in print\")."
+          },
+          {
+            "name": "dateType",
+            "mode": "NULLABLE",
+            "type": "STRING",
+            "description": "The type of date (e.g., Issued, Created, Updated)."
+          }
+        ]
+      },
+      {
+        "name": "descriptions",
+        "mode": "REPEATED",
+        "type": "RECORD",
+        "description": "All additional information that does not fit in any of the other categories (e.g., Abstract, Methods).",
+        "fields": [
+          {
+            "name": "description",
+            "mode": "NULLABLE",
+            "type": "STRING",
+            "description": "The content of the description."
+          },
+          {
+            "name": "descriptionType",
+            "mode": "NULLABLE",
+            "type": "STRING",
+            "description": "The type of description (e.g., Abstract, Methods, SeriesInformation)."
+          },
+          {
+            "name": "lang",
+            "mode": "NULLABLE",
+            "type": "STRING",
+            "description": "The language of the description."
+          }
+        ]
+      },
+      {
+        "name": "doi",
+        "mode": "NULLABLE",
+        "type": "STRING",
+        "description": "The Digital Object Identifier registered for the resource."
+      },
+      {
+        "name": "downloadCount",
+        "mode": "NULLABLE",
+        "type": "INTEGER",
+        "description": "The total number of downloads for this resource."
+      },
+      {
+        "name": "downloadsOverTime",
+        "mode": "REPEATED",
+        "type": "RECORD",
+        "description": "A breakdown of download counts grouped by month/year.",
+        "fields": [
+          {
+            "name": "total",
+            "mode": "NULLABLE",
+            "type": "INTEGER",
+            "description": "The total number of downloads for the specific time period."
+          },
+          {
+            "name": "yearMonth",
+            "mode": "NULLABLE",
+            "type": "STRING",
+            "description": "The year and month of the download count (YYYY-MM)."
+          }
+        ]
+      },
+      {
+        "name": "formats",
+        "mode": "REPEATED",
+        "type": "STRING",
+        "description": "Technical format of the resource (e.g., file extension or MIME type)."
+      },
+      {
+        "name": "fundingReferences",
+        "mode": "REPEATED",
+        "type": "RECORD",
+        "description": "Information about financial support (funding) for the resource being registered.",
+        "fields": [
+          {
+            "name": "awardNumber",
+            "mode": "NULLABLE",
+            "type": "STRING",
+            "description": "The code assigned by the funder to the grant or award."
+          },
+          {
+            "name": "awardTitle",
+            "mode": "NULLABLE",
+            "type": "STRING",
+            "description": "The human-readable title of the award."
+          },
+          {
+            "name": "awardUri",
+            "mode": "NULLABLE",
+            "type": "STRING",
+            "description": "The URI leading to a page with more information about the award."
+          },
+          {
+            "name": "funderIdentifier",
+            "mode": "NULLABLE",
+            "type": "STRING",
+            "description": "Uniquely identifies the funding entity (e.g., a Crossref Funder ID)."
+          },
+          {
+            "name": "funderIdentifierType",
+            "mode": "NULLABLE",
+            "type": "STRING",
+            "description": "The type of funder identifier used."
+          },
+          {
+            "name": "funderName",
+            "mode": "NULLABLE",
+            "type": "STRING",
+            "description": "The name of the funding provider."
+          },
+          {
+            "name": "schemeUri",
+            "mode": "NULLABLE",
+            "type": "STRING",
+            "description": "The URI of the funder identifier scheme."
+          }
+        ]
+      },
+      {
+        "name": "geoLocations",
+        "mode": "REPEATED",
+        "type": "RECORD",
+        "description": "Spatial region or named place where the data was gathered or about which the data is focused.",
+        "fields": [
+          {
+            "name": "geoLocationBox",
+            "mode": "NULLABLE",
+            "type": "RECORD",
+            "description": "A rectangular bounding box definition.",
+            "fields": [
+              {
+                "name": "eastBoundLongitude",
+                "mode": "NULLABLE",
+                "type": "STRING",
+                "description": "The easternmost longitude of the box."
+              },
+              {
+                "name": "northBoundLatitude",
+                "mode": "NULLABLE",
+                "type": "STRING",
+                "description": "The northernmost latitude of the box."
+              },
+              {
+                "name": "southBoundLatitude",
+                "mode": "NULLABLE",
+                "type": "STRING",
+                "description": "The southernmost latitude of the box."
+              },
+              {
+                "name": "westBoundLongitude",
+                "mode": "NULLABLE",
+                "type": "STRING",
+                "description": "The westernmost longitude of the box."
+              }
+            ]
+          },
+          {
+            "name": "geoLocationPlace",
+            "mode": "NULLABLE",
+            "type": "STRING",
+            "description": "A description of a geographic location (e.g., city name)."
+          },
+          {
+            "name": "geoLocationPoint",
+            "mode": "NULLABLE",
+            "type": "RECORD",
+            "description": "A specific point location defined by latitude and longitude.",
+            "fields": [
+              {
+                "name": "pointLatitude",
+                "mode": "NULLABLE",
+                "type": "STRING",
+                "description": "The latitude of the point."
+              },
+              {
+                "name": "pointLongitude",
+                "mode": "NULLABLE",
+                "type": "STRING",
+                "description": "The longitude of the point."
+              }
+            ]
+          },
+          {
+            "name": "geoLocationPolygon",
+            "mode": "REPEATED",
+            "type": "RECORD",
+            "description": "A drawn polygon area defined by a set of points.",
+            "fields": [
+              {
+                "name": "polygonPoint",
+                "mode": "NULLABLE",
+                "type": "RECORD",
+                "description": "A point within the polygon.",
+                "fields": [
+                  {
+                    "name": "pointLatitude",
+                    "mode": "NULLABLE",
+                    "type": "STRING",
+                    "description": "The latitude of the polygon point."
+                  },
+                  {
+                    "name": "pointLongitude",
+                    "mode": "NULLABLE",
+                    "type": "STRING",
+                    "description": "The longitude of the polygon point."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "identifiers",
+        "mode": "REPEATED",
+        "type": "RECORD",
+        "description": "A list of identifiers associated with the resource (API field).",
+        "fields": [
+          {
+            "name": "identifier",
+            "mode": "NULLABLE",
+            "type": "STRING",
+            "description": "The value of the identifier."
+          },
+          {
+            "name": "identifierType",
+            "mode": "NULLABLE",
+            "type": "STRING",
+            "description": "The type of the identifier."
+          }
+        ]
+      },
+      {
+        "name": "isActive",
+        "mode": "NULLABLE",
+        "type": "BOOLEAN",
+        "description": "Indicates if the DOI is currently in an active state (Findable)."
+      },
+      {
+        "name": "language",
+        "mode": "NULLABLE",
+        "type": "STRING",
+        "description": "The primary language of the resource (RFC 5646 codes)."
+      },
+      {
+        "name": "metadataVersion",
+        "mode": "NULLABLE",
+        "type": "INTEGER",
+        "description": "The version of the metadata record in the DataCite system."
+      },
+      {
+        "name": "partCount",
+        "mode": "NULLABLE",
+        "type": "INTEGER",
+        "description": "The number of parts associated with this resource."
+      },
+      {
+        "name": "partOfCount",
+        "mode": "NULLABLE",
+        "type": "INTEGER",
+        "description": "The number of collections this resource is a part of."
+      },
+      {
+        "name": "prefix",
+        "mode": "NULLABLE",
+        "type": "STRING",
+        "description": "The DOI prefix (e.g., 10.1234) indicating the allocating member."
+      },
+      {
+        "name": "publicationYear",
+        "mode": "NULLABLE",
+        "type": "INTEGER",
+        "description": "The year when the data was or will be made publicly available."
+      },
+      {
+        "name": "published",
+        "mode": "NULLABLE",
+        "type": "STRING",
+        "description": "The publication year or date (API display field)."
+      },
+      {
+        "name": "publisher",
+        "mode": "NULLABLE",
+        "type": "RECORD",
+        "description": "The entity that holds, archives, publishes, prints, distributes, releases, issues, or produces the resource. This property is used to formulate the citation.",
+        "fields": [
+          {
+            "name": "lang",
+            "mode": "NULLABLE",
+            "type": "STRING",
+            "description": "The language of the publisher name."
+          },
+          {
+            "name": "name",
+            "mode": "NULLABLE",
+            "type": "STRING",
+            "description": "The name of the publisher."
+          },
+          {
+            "name": "publisherIdentifier",
+            "mode": "NULLABLE",
+            "type": "STRING",
+            "description": "The unique identifier for the publisher (e.g., ROR)."
+          },
+          {
+            "name": "publisherIdentifierScheme",
+            "mode": "NULLABLE",
+            "type": "STRING",
+            "description": "The name of the scheme used for the publisher identifier."
+          },
+          {
+            "name": "schemeUri",
+            "mode": "NULLABLE",
+            "type": "STRING",
+            "description": "The URI of the publisher identifier scheme."
+          }
+        ]
+      },
+      {
+        "name": "reason",
+        "mode": "NULLABLE",
+        "type": "STRING",
+        "description": "The reason for a state change (e.g., why a DOI was hidden)."
+      },
+      {
+        "name": "referenceCount",
+        "mode": "NULLABLE",
+        "type": "INTEGER",
+        "description": "The number of references cited by this resource."
+      },
+      {
+        "name": "registered",
+        "mode": "NULLABLE",
+        "type": "TIMESTAMP",
+        "description": "The timestamp when the DOI was registered."
+      },
+      {
+        "name": "relatedIdentifiers",
+        "mode": "REPEATED",
+        "type": "RECORD",
+        "description": "Identifiers of related resources. These must be globally unique identifiers.",
+        "fields": [
+          {
+            "name": "id",
+            "mode": "NULLABLE",
+            "type": "STRING",
+            "description": "The related identifier string."
+          },
+          {
+            "name": "relatedIdentifier",
+            "mode": "NULLABLE",
+            "type": "STRING",
+            "description": "The value of the related identifier."
+          },
+          {
+            "name": "relatedIdentifierType",
+            "mode": "NULLABLE",
+            "type": "STRING",
+            "description": "The type of the related identifier (e.g., DOI, URL)."
+          },
+          {
+            "name": "relatedMetadataScheme",
+            "mode": "NULLABLE",
+            "type": "STRING",
+            "description": "The name of the scheme if the identifier is a metadata scheme."
+          },
+          {
+            "name": "relationType",
+            "mode": "NULLABLE",
+            "type": "STRING",
+            "description": "The relationship type (e.g., Cites, IsCitedBy, IsPartOf)."
+          },
+          {
+            "name": "resourceTypeGeneral",
+            "mode": "NULLABLE",
+            "type": "STRING",
+            "description": "The general type of the related resource."
+          },
+          {
+            "name": "schemeType",
+            "mode": "NULLABLE",
+            "type": "STRING",
+            "description": "The type of the related metadata scheme."
+          },
+          {
+            "name": "schemeUri",
+            "mode": "NULLABLE",
+            "type": "STRING",
+            "description": "The URI of the related metadata scheme."
+          },
+          {
+            "name": "title",
+            "mode": "NULLABLE",
+            "type": "STRING",
+            "description": "The title of the related resource (optional)."
+          },
+          {
+            "name": "type",
+            "mode": "NULLABLE",
+            "type": "STRING",
+            "description": "The resource type of the related resource."
+          }
+        ]
+      },
+      {
+        "name": "relatedItems",
+        "mode": "REPEATED",
+        "type": "RECORD",
+        "description": "Information about a resource related to the one being registered (e.g. a journal, book, or series).",
+        "fields": [
+          {
+            "name": "contributors",
+            "mode": "REPEATED",
+            "type": "RECORD",
+            "description": "Contributors to the related item.",
+            "fields": [
+              {
+                "name": "contributorType",
+                "mode": "NULLABLE",
+                "type": "STRING",
+                "description": "The type of contributor to the related item."
+              },
+              {
+                "name": "familyName",
+                "mode": "NULLABLE",
+                "type": "STRING",
+                "description": "The family name of the contributor."
+              },
+              {
+                "name": "givenName",
+                "mode": "NULLABLE",
+                "type": "STRING",
+                "description": "The given name of the contributor."
+              },
+              {
+                "name": "name",
+                "mode": "NULLABLE",
+                "type": "STRING",
+                "description": "The full name of the contributor."
+              },
+              {
+                "name": "nameType",
+                "mode": "NULLABLE",
+                "type": "STRING",
+                "description": "The type of name."
+              }
+            ]
+          },
+          {
+            "name": "creators",
+            "mode": "REPEATED",
+            "type": "RECORD",
+            "description": "Creators of the related item.",
+            "fields": [
+              {
+                "name": "familyName",
+                "mode": "NULLABLE",
+                "type": "STRING",
+                "description": "The family name of the creator."
+              },
+              {
+                "name": "givenName",
+                "mode": "NULLABLE",
+                "type": "STRING",
+                "description": "The given name of the creator."
+              },
+              {
+                "name": "name",
+                "mode": "NULLABLE",
+                "type": "STRING",
+                "description": "The full name of the creator."
+              },
+              {
+                "name": "nameType",
+                "mode": "NULLABLE",
+                "type": "STRING",
+                "description": "The type of name."
+              }
+            ]
+          },
+          {
+            "name": "edition",
+            "mode": "NULLABLE",
+            "type": "STRING",
+            "description": "The edition of the related item."
+          },
+          {
+            "name": "firstPage",
+            "mode": "NULLABLE",
+            "type": "STRING",
+            "description": "The first page of the related item."
+          },
+          {
+            "name": "issue",
+            "mode": "NULLABLE",
+            "type": "STRING",
+            "description": "The issue number of the related item."
+          },
+          {
+            "name": "lastPage",
+            "mode": "NULLABLE",
+            "type": "STRING",
+            "description": "The last page of the related item."
+          },
+          {
+            "name": "number",
+            "mode": "NULLABLE",
+            "type": "STRING",
+            "description": "The number of the related item."
+          },
+          {
+            "name": "numberType",
+            "mode": "NULLABLE",
+            "type": "STRING",
+            "description": "The type of number (e.g., article number)."
+          },
+          {
+            "name": "publicationYear",
+            "mode": "NULLABLE",
+            "type": "STRING",
+            "description": "The publication year of the related item."
+          },
+          {
+            "name": "publisher",
+            "mode": "NULLABLE",
+            "type": "STRING",
+            "description": "The publisher of the related item."
+          },
+          {
+            "name": "relatedItemIdentifier",
+            "mode": "NULLABLE",
+            "type": "RECORD",
+            "description": "The identifier for the related item.",
+            "fields": [
+              {
+                "name": "relatedItemIdentifier",
+                "mode": "NULLABLE",
+                "type": "STRING",
+                "description": "The identifier value."
+              },
+              {
+                "name": "relatedItemIdentifierType",
+                "mode": "NULLABLE",
+                "type": "STRING",
+                "description": "The type of identifier (e.g., DOI, ISSN)."
+              }
+            ]
+          },
+          {
+            "name": "relatedItemType",
+            "mode": "NULLABLE",
+            "type": "STRING",
+            "description": "The general type of the related item (e.g., JournalArticle)."
+          },
+          {
+            "name": "relationType",
+            "mode": "NULLABLE",
+            "type": "STRING",
+            "description": "Description of the relationship of the resource to the related item (e.g., IsPublishedIn)."
+          },
+          {
+            "name": "titles",
+            "mode": "REPEATED",
+            "type": "RECORD",
+            "description": "The titles of the related item.",
+            "fields": [
+              {
+                "name": "lang",
+                "mode": "NULLABLE",
+                "type": "STRING",
+                "description": "The language of the title."
+              },
+              {
+                "name": "title",
+                "mode": "NULLABLE",
+                "type": "STRING",
+                "description": "The title text."
+              },
+              {
+                "name": "titleType",
+                "mode": "NULLABLE",
+                "type": "STRING",
+                "description": "The type of title (e.g., TranslatedTitle)."
+              }
+            ]
+          },
+          {
+            "name": "volume",
+            "mode": "NULLABLE",
+            "type": "STRING",
+            "description": "The volume of the related item."
+          }
+        ]
+      },
+      {
+        "name": "rightsList",
+        "mode": "REPEATED",
+        "type": "RECORD",
+        "description": "Rights information for this resource (e.g., license or usage rights).",
+        "fields": [
+          {
+            "name": "lang",
+            "mode": "NULLABLE",
+            "type": "STRING",
+            "description": "The language of the rights text."
+          },
+          {
+            "name": "rights",
+            "mode": "NULLABLE",
+            "type": "STRING",
+            "description": "The text stating the rights (e.g., \"CC-BY 4.0\")."
+          },
+          {
+            "name": "rightsIdentifier",
+            "mode": "NULLABLE",
+            "type": "STRING",
+            "description": "A short identifier for the rights (e.g., \"cc-by-4.0\")."
+          },
+          {
+            "name": "rightsIdentifierScheme",
+            "mode": "NULLABLE",
+            "type": "STRING",
+            "description": "The name of the scheme for the rights identifier (e.g., SPDX)."
+          },
+          {
+            "name": "rightsUri",
+            "mode": "NULLABLE",
+            "type": "STRING",
+            "description": "The URI of the license/rights statement."
+          },
+          {
+            "name": "schemeUri",
+            "mode": "NULLABLE",
+            "type": "STRING",
+            "description": "The URI of the rights identifier scheme."
+          }
+        ]
+      },
+      {
+        "name": "schemaVersion",
+        "mode": "NULLABLE",
+        "type": "STRING",
+        "description": "The version of the DataCite Metadata Schema used (e.g., \"http://datacite.org/schema/kernel-4\")."
+      },
+      {
+        "name": "sizes",
+        "mode": "REPEATED",
+        "type": "STRING",
+        "description": "Unstructured size information about the resource (e.g., \"15 pages\", \"6 MB\")."
+      },
+      {
+        "name": "source",
+        "mode": "NULLABLE",
+        "type": "STRING",
+        "description": "The source of the metadata (API field)."
+      },
+      {
+        "name": "state",
+        "mode": "NULLABLE",
+        "type": "STRING",
+        "description": "The current state of the DOI (Draft, Registered, or Findable)."
+      },
+      {
+        "name": "subjects",
+        "mode": "REPEATED",
+        "type": "RECORD",
+        "description": "Subject, keyword, classification code, or key phrase describing the resource.",
+        "fields": [
+          {
+            "name": "classificationCode",
+            "mode": "NULLABLE",
+            "type": "STRING",
+            "description": "A subject classification code."
+          },
+          {
+            "name": "lang",
+            "mode": "NULLABLE",
+            "type": "STRING",
+            "description": "The language of the subject."
+          },
+          {
+            "name": "schemeUri",
+            "mode": "NULLABLE",
+            "type": "STRING",
+            "description": "The URI of the subject scheme."
+          },
+          {
+            "name": "subject",
+            "mode": "NULLABLE",
+            "type": "STRING",
+            "description": "The subject or keyword text."
+          },
+          {
+            "name": "subjectScheme",
+            "mode": "NULLABLE",
+            "type": "STRING",
+            "description": "The name of the subject scheme/classification."
+          },
+          {
+            "name": "valueUri",
+            "mode": "NULLABLE",
+            "type": "STRING",
+            "description": "The URI of the specific subject value."
+          }
+        ]
+      },
+      {
+        "name": "suffix",
+        "mode": "NULLABLE",
+        "type": "STRING",
+        "description": "The suffix part of the DOI (the unique string after the slash)."
+      },
+      {
+        "name": "titles",
+        "mode": "REPEATED",
+        "type": "RECORD",
+        "description": "A name or title by which the resource is known.",
+        "fields": [
+          {
+            "name": "lang",
+            "mode": "NULLABLE",
+            "type": "STRING",
+            "description": "The language of the title."
+          },
+          {
+            "name": "title",
+            "mode": "NULLABLE",
+            "type": "STRING",
+            "description": "The title text."
+          },
+          {
+            "name": "titleType",
+            "mode": "NULLABLE",
+            "type": "STRING",
+            "description": "The type of title (e.g., AlternativeTitle, Subtitle, TranslatedTitle)."
+          }
+        ]
+      },
+      {
+        "name": "types",
+        "mode": "NULLABLE",
+        "type": "RECORD",
+        "description": "A container for resource type information and export formats.",
+        "fields": [
+          {
+            "name": "bibtex",
+            "mode": "NULLABLE",
+            "type": "STRING",
+            "description": "The metadata formatted in BibTeX for citation."
+          },
+          {
+            "name": "citeproc",
+            "mode": "NULLABLE",
+            "type": "STRING",
+            "description": "The metadata formatted in CiteProc JSON for citation."
+          },
+          {
+            "name": "resourceType",
+            "mode": "NULLABLE",
+            "type": "STRING",
+            "description": "A description of the resource (free-text)."
+          },
+          {
+            "name": "resourceTypeGeneral",
+            "mode": "NULLABLE",
+            "type": "STRING",
+            "description": "The general resource type from the controlled list (e.g., Dataset, Software, Image)."
+          },
+          {
+            "name": "ris",
+            "mode": "NULLABLE",
+            "type": "STRING",
+            "description": "The metadata formatted in RIS for reference managers."
+          },
+          {
+            "name": "schemaOrg",
+            "mode": "NULLABLE",
+            "type": "STRING",
+            "description": "The metadata formatted as Schema.org JSON-LD."
+          }
+        ]
+      },
+      {
+        "name": "updated",
+        "mode": "NULLABLE",
+        "type": "TIMESTAMP",
+        "description": "The timestamp when the metadata was last updated."
+      },
+      {
+        "name": "url",
+        "mode": "NULLABLE",
+        "type": "STRING",
+        "description": "The URL the DOI resolves to (the landing page)."
+      },
+      {
+        "name": "version",
+        "mode": "NULLABLE",
+        "type": "STRING",
+        "description": "The version number of the resource."
+      },
+      {
+        "name": "versionCount",
+        "mode": "NULLABLE",
+        "type": "INTEGER",
+        "description": "The number of versions associated with this resource."
+      },
+      {
+        "name": "versionOfCount",
+        "mode": "NULLABLE",
+        "type": "INTEGER",
+        "description": "The number of resources this resource is a version of."
+      },
+      {
+        "name": "viewCount",
+        "mode": "NULLABLE",
+        "type": "INTEGER",
+        "description": "The number of views for this resource landing page."
+      },
+      {
+        "name": "viewsOverTime",
+        "mode": "REPEATED",
+        "type": "RECORD",
+        "description": "A breakdown of view counts grouped by month/year.",
+        "fields": [
+          {
+            "name": "total",
+            "mode": "NULLABLE",
+            "type": "INTEGER",
+            "description": "The total number of views for the specific period."
+          },
+          {
+            "name": "yearMonth",
+            "mode": "NULLABLE",
+            "type": "STRING",
+            "description": "The year and month of the view count."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "id",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": "The DataCite DOI (Digital Object Identifier) string."
+  },
+  {
+    "name": "relationships",
+    "mode": "NULLABLE",
+    "type": "RECORD",
+    "description": "A container for relationships to other API entities (JSON API spec).",
+    "fields": [
+      {
+        "name": "citations",
+        "mode": "NULLABLE",
+        "type": "RECORD",
+        "description": "Relationship to resources that cite this DOI.",
+        "fields": [
+          {
+            "name": "data",
+            "mode": "REPEATED",
+            "type": "RECORD",
+            "description": "The array of relationship objects.",
+            "fields": [
+              {
+                "name": "id",
+                "mode": "NULLABLE",
+                "type": "STRING",
+                "description": "The ID of the citing resource."
+              },
+              {
+                "name": "type",
+                "mode": "NULLABLE",
+                "type": "STRING",
+                "description": "The type of the entity (e.g., \"dois\")."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "client",
+        "mode": "NULLABLE",
+        "type": "RECORD",
+        "description": "Relationship to the DataCite Client (Repository) account that manages this DOI.",
+        "fields": [
+          {
+            "name": "data",
+            "mode": "NULLABLE",
+            "type": "RECORD",
+            "description": "The relationship object.",
+            "fields": [
+              {
+                "name": "id",
+                "mode": "NULLABLE",
+                "type": "STRING",
+                "description": "The Client ID (account ID)."
+              },
+              {
+                "name": "type",
+                "mode": "NULLABLE",
+                "type": "STRING",
+                "description": "The type of the entity (\"clients\")."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "media",
+        "mode": "NULLABLE",
+        "type": "RECORD",
+        "description": "Relationship to media objects (e.g., text/plain).",
+        "fields": [
+          {
+            "name": "data",
+            "mode": "REPEATED",
+            "type": "RECORD",
+            "description": "The array of media relationship objects.",
+            "fields": [
+              {
+                "name": "id",
+                "mode": "NULLABLE",
+                "type": "STRING",
+                "description": "The Media ID."
+              },
+              {
+                "name": "type",
+                "mode": "NULLABLE",
+                "type": "STRING",
+                "description": "The type of the entity (\"media\")."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "partOf",
+        "mode": "NULLABLE",
+        "type": "RECORD",
+        "description": "Relationship to resources that this DOI is a part of (e.g., a collection).",
+        "fields": [
+          {
+            "name": "data",
+            "mode": "REPEATED",
+            "type": "RECORD",
+            "description": "The array of relationship objects.",
+            "fields": [
+              {
+                "name": "id",
+                "mode": "NULLABLE",
+                "type": "STRING",
+                "description": "The ID of the parent resource."
+              },
+              {
+                "name": "type",
+                "mode": "NULLABLE",
+                "type": "STRING",
+                "description": "The type of the entity (\"dois\")."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "parts",
+        "mode": "NULLABLE",
+        "type": "RECORD",
+        "description": "Relationship to resources that are parts of this DOI.",
+        "fields": [
+          {
+            "name": "data",
+            "mode": "REPEATED",
+            "type": "RECORD",
+            "description": "The array of relationship objects.",
+            "fields": [
+              {
+                "name": "id",
+                "mode": "NULLABLE",
+                "type": "STRING",
+                "description": "The ID of the child resource."
+              },
+              {
+                "name": "type",
+                "mode": "NULLABLE",
+                "type": "STRING",
+                "description": "The type of the entity (\"dois\")."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "provider",
+        "mode": "NULLABLE",
+        "type": "RECORD",
+        "description": "Relationship to the DataCite Provider (Member) responsible for the Client.",
+        "fields": [
+          {
+            "name": "data",
+            "mode": "NULLABLE",
+            "type": "RECORD",
+            "description": "The relationship object.",
+            "fields": [
+              {
+                "name": "id",
+                "mode": "NULLABLE",
+                "type": "STRING",
+                "description": "The Provider ID."
+              },
+              {
+                "name": "type",
+                "mode": "NULLABLE",
+                "type": "STRING",
+                "description": "The type of the entity (\"providers\")."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "references",
+        "mode": "NULLABLE",
+        "type": "RECORD",
+        "description": "Relationship to resources referenced by this DOI.",
+        "fields": [
+          {
+            "name": "data",
+            "mode": "REPEATED",
+            "type": "RECORD",
+            "description": "The array of relationship objects.",
+            "fields": [
+              {
+                "name": "id",
+                "mode": "NULLABLE",
+                "type": "STRING",
+                "description": "The ID of the referenced resource."
+              },
+              {
+                "name": "type",
+                "mode": "NULLABLE",
+                "type": "STRING",
+                "description": "The type of the entity (\"dois\")."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "versionOf",
+        "mode": "NULLABLE",
+        "type": "RECORD",
+        "description": "Relationship to the resource this DOI is a version of.",
+        "fields": [
+          {
+            "name": "data",
+            "mode": "REPEATED",
+            "type": "RECORD",
+            "description": "The array of relationship objects.",
+            "fields": [
+              {
+                "name": "id",
+                "mode": "NULLABLE",
+                "type": "STRING",
+                "description": "The ID of the parent version."
+              },
+              {
+                "name": "type",
+                "mode": "NULLABLE",
+                "type": "STRING",
+                "description": "The type of the entity (\"dois\")."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "versions",
+        "mode": "NULLABLE",
+        "type": "RECORD",
+        "description": "Relationship to other versions of this resource.",
+        "fields": [
+          {
+            "name": "data",
+            "mode": "REPEATED",
+            "type": "RECORD",
+            "description": "The array of relationship objects.",
+            "fields": [
+              {
+                "name": "id",
+                "mode": "NULLABLE",
+                "type": "STRING",
+                "description": "The ID of the version."
+              },
+              {
+                "name": "type",
+                "mode": "NULLABLE",
+                "type": "STRING",
+                "description": "The type of the entity (\"dois\")."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "type",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": "The type of the entity (e.g., \"dois\")."
+  }
+]

@@ -1,0 +1,178 @@
+[
+  {
+    "name": "id",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "type",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "attributes",
+    "fields": [
+      {
+        "name": "name",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "symbol",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "year",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "alternateName",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "description",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "language",
+        "type": "STRING",
+        "mode": "REPEATED"
+      },
+      {
+        "name": "clientType",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "domains",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "re3data",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "opendoar",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "issn",
+        "fields": [
+          {
+            "name": "issnl",
+            "type": "STRING",
+            "mode": "NULLABLE"
+          },
+          {
+            "name": "print",
+            "type": "STRING",
+            "mode": "NULLABLE"
+          },
+          {
+            "name": "electronic",
+            "type": "STRING",
+            "mode": "NULLABLE"
+          }
+        ],
+        "type": "RECORD",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "url",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "created",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "updated",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "isActive",
+        "type": "BOOLEAN",
+        "mode": "NULLABLE"
+      }
+    ],
+    "type": "RECORD",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "relationships",
+    "fields": [
+      {
+        "name": "provider",
+        "fields": [
+          {
+            "name": "data",
+            "fields": [
+              {
+                "name": "id",
+                "type": "STRING",
+                "mode": "NULLABLE"
+              },
+              {
+                "name": "type",
+                "type": "STRING",
+                "mode": "NULLABLE"
+              }
+            ],
+            "type": "RECORD",
+            "mode": "NULLABLE"
+          }
+        ],
+        "type": "RECORD",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "consortium",
+        "fields": [
+          {
+            "name": "data",
+            "fields": [
+              {
+                "name": "id",
+                "type": "STRING",
+                "mode": "NULLABLE"
+              },
+              {
+                "name": "type",
+                "type": "STRING",
+                "mode": "NULLABLE"
+              }
+            ],
+            "type": "RECORD",
+            "mode": "NULLABLE"
+          }
+        ],
+        "type": "RECORD",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "prefixes",
+        "fields": [
+          {
+            "name": "data",
+            "type": "STRING",
+            "mode": "REPEATED"
+          }
+        ],
+        "type": "RECORD",
+        "mode": "NULLABLE"
+      }
+    ],
+    "type": "RECORD",
+    "mode": "NULLABLE"
+  }
+]
