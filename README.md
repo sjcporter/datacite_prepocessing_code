@@ -1,8 +1,8 @@
 
 ```markdown
-# DataCite Preprocessing Code
+# DataCite Preprocessing Code for ds-open-datasets
 
-This repository contains robust pipelines and utilities designed to harvest, clean, and preprocess DataCite metadata for ingestion into Google BigQuery. The core focus of these tools is to resolve common BigQuery schema compatibility issues and stream large volumes of processed data directly to Amazon S3.
+This repository contains pipelines and utilities designed to harvest, clean, and preprocess DataCite metadata for ingestion into Google BigQuery. The core focus of these tools is to resolve common BigQuery schema compatibility issues and stream large volumes of processed data directly to Amazon S3.
 
 ## 📖 Overview
 
